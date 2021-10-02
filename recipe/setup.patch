@@ -1,0 +1,30 @@
+From 0c7766f9c98ca96b651f02ba10d2096114f556c3 Mon Sep 17 00:00:00 2001
+From: Jan Janssen <jan-janssen@users.noreply.github.com>
+Date: Sat, 2 Oct 2021 10:12:47 -0600
+Subject: [PATCH] Update setup.py
+
+---
+ setup.py | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/setup.py b/setup.py
+index 0cad041..98f6c71 100644
+--- a/setup.py
++++ b/setup.py
+@@ -63,11 +63,11 @@ def brew_poppler_include():
+ if platform.system() == "Darwin":
+     extra_compile_args += ["-mmacosx-version-min=10.9", "-std=c++11"]
+     extra_link_args += ["-mmacosx-version-min=10.9"]
+-    brew_include, brew_library = brew_poppler_include()
+-    if brew_include is not None:
+-        include_dirs.append(brew_include)
+-    if brew_library is not None:
+-        library_dirs.append(brew_library)
++    # brew_include, brew_library = brew_poppler_include()
++    # if brew_include is not None:
++    #     include_dirs.append(brew_include)
++    # if brew_library is not None:
++    #     library_dirs.append(brew_library)
+ 
+ macros = [
+     ("POPPLER_CPP_AT_LEAST_0_30_0", int(poppler_cpp_at_least("0.30.0"))),
