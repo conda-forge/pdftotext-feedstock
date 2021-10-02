@@ -8,6 +8,8 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pdftotext-{{ version }}.tar.gz
   sha256: a067c121654917ecbe07fbd71c807c34bbdb1ea029e269ddd11925ee7e191d3f
+  patches:
+    - setup.patch
 
 build:
   number: 0
