@@ -1,11 +1,11 @@
-About pdftotext
-===============
+About pdftotext-feedstock
+=========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pdftotext-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/jalan/pdftotext
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pdftotext-feedstock/blob/main/LICENSE.txt)
 
 Summary: Simple PDF text extraction
 
