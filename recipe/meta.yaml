@@ -12,7 +12,7 @@ source:
     - setup.patch
 
 build:
-  number: 22
+  number: 23
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
