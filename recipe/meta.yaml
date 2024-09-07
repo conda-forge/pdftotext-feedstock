@@ -25,6 +25,7 @@ requirements:
   host:
     - pip
     - python
+    - setuptools
     - poppler
   run:
     - python
