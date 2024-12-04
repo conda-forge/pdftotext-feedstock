@@ -6,13 +6,13 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pdftotext-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pdftotext-{{ version }}.tar.gz
   sha256: 2a9aa89bc62022408781b39d188fabf5a3ad1103b6630f32c4e27e395f7966ee
   patches:
     - setup.patch
 
 build:
-  number: 23
+  number: 24
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
