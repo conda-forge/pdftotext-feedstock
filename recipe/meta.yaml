@@ -1,5 +1,5 @@
 {% set name = "pdftotext" %}
-{% set version = "2.2.2" %}
+{% set version = "3.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pdftotext-{{ version }}.tar.gz
-  sha256: 2a9aa89bc62022408781b39d188fabf5a3ad1103b6630f32c4e27e395f7966ee
+  sha256: c3652b19154e145515a8bfa953fc6136338ed92337bdccbb53fe0d88013b1aaa
   patches:
     - setup.patch
 
 build:
-  number: 25
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
