@@ -15,15 +15,15 @@ source:
     - setup.patch
 
 build:
-  number: 1
+  number: 2
   script: ${{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
     - if: build_platform != target_platform
-      then: python
-    - if: build_platform != target_platform
-      then: cross-python_${{ target_platform }}
+      then:
+        - python
+        - cross-python_${{ target_platform }}
     - pkg-config
     - ${{ compiler('cxx') }}
     - ${{ stdlib("c") }}
