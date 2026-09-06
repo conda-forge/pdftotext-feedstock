@@ -1,0 +1,57 @@
+schema_version: 1
+
+context:
+  name: pdftotext
+  version: "4.0.0"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pdftotext-${{ version }}.tar.gz
+  sha256: 6c949f01bb0fea4560cc23e4b8b017188647d22f99a604a7ed3d09f72f43e634
+  patches:
+    - setup.patch
+
+build:
+  number: 1
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  build:
+    - if: build_platform != target_platform
+      then: python
+    - if: build_platform != target_platform
+      then: cross-python_${{ target_platform }}
+    - pkg-config
+    - ${{ compiler('cxx') }}
+    - ${{ stdlib("c") }}
+  host:
+    - pip
+    - python
+    - setuptools
+    - poppler
+  run:
+    - python
+    - poppler
+
+tests:
+  - python:
+      imports:
+        - pdftotext
+      pip_check: true
+
+about:
+  license: MIT
+  license_file: LICENSE
+  summary: Simple PDF text extraction
+  description: |
+    Simple PDF text extraction
+  homepage: https://github.com/jalan/pdftotext
+  repository: https://github.com/jalan/pdftotext
+  documentation: https://github.com/jalan/pdftotext
+
+extra:
+  recipe-maintainers:
+    - jan-janssen
